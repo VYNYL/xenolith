@@ -1,10 +1,10 @@
 <?php
 
-namespace Vynyl\Xenolith\ServiceProvider;
+namespace Vynyl\Xenolith;
 
 use Illuminate\Support\ServiceProvider;
 
-class VynylXenolithServiceProvider extends ServiceProvider
+class XenolithServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
