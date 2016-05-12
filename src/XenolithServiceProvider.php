@@ -27,7 +27,9 @@ class XenolithServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // services will go here
+        $this->app->singleton('vynyl.model', function ($app) {
+            return new ModelGeneratorCommand();
+        });
     }
 }
 
