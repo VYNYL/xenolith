@@ -4,6 +4,7 @@ namespace Vynyl\Xenolith;
 
 use Illuminate\Support\ServiceProvider;
 use Vynyl\Xenolith\Commands\MakeModelCommand;
+use Vynyl\Xenolith\Commands\ExampleCommand;
 
 class XenolithServiceProvider extends ServiceProvider
 {

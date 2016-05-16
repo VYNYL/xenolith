@@ -12,7 +12,7 @@ class ExampleCommand extends BaseCommand
 
     public function handle()
     {
-        echo $this->twig->render('example.twig', array('namespace' => 'Slartiblartfast'));
+        echo $this->twig->render($this->getTemplate(), array('namespace' => 'Slartiblartfast'));
     }
 
 }
