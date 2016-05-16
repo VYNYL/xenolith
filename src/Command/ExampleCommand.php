@@ -26,7 +26,6 @@ class ExampleCommand extends BaseCommand
     public function handle()
     {
         $this->marshaller->create($this->getTemplate(), './', ['namespace' => 'Slartiblartfast']);
-        //echo $this->twig->render($this->getTemplate(), array('namespace' => 'Slartiblartfast'));
     }
 
     protected function getTemplate()
