@@ -1,0 +1,39 @@
+{% autoescape false %}
+<?php
+
+namespace {{ namespace }};
+
+use {{ model_extend_class }} as Model;
+{{ soft_delete_import }}
+{{ docs }}
+class {{ name }} extends Model
+{
+{{ soft_deletes }}
+    public $table = '{{ table_name }}';
+    {{ timestamps }}
+{{ soft_delete_dates }}
+{{ primary }}
+    public $fillable = [
+        {{ fields }}
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        {{ cast }}
+    ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        {{ rules }}
+    ];
+}
+
+{% endautoescape %}
