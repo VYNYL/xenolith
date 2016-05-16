@@ -3,7 +3,8 @@
 namespace Vynyl\Xenolith\Command;
 
 use Illuminate\Console\Command;
-
+use \Twig_Loader_Filesystem;
+use \Twig_Environment;
 
 abstract class BaseCommand extends Command
 {
