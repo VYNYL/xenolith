@@ -3,8 +3,8 @@
 namespace Vynyl\Xenolith;
 
 use Illuminate\Support\ServiceProvider;
-use Vynyl\Xenolith\Commands\MakeModelCommand;
-use Vynyl\Xenolith\Commands\ExampleCommand;
+use Vynyl\Xenolith\Command\MakeModelCommand;
+use Vynyl\Xenolith\Command\ExampleCommand;
 
 class XenolithServiceProvider extends ServiceProvider
 {
