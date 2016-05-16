@@ -1,6 +1,6 @@
 <?php
 
-namespace Vynyl\Xenolith\Commands;
+namespace Vynyl\Xenolith\Command;
 
 use Illuminate\Console\Command;
 
