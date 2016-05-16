@@ -30,7 +30,7 @@ class ExampleCommand extends BaseCommand
 
     protected function getTemplate()
     {
-        return __DIR__ . '/../templates/example.twig';
+        return 'example.twig';
     }
 
     /**
