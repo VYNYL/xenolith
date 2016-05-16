@@ -3,6 +3,7 @@
 namespace Vynyl\Xenolith;
 
 use Illuminate\Support\ServiceProvider;
+use Vynyl\Xenolith\Commands\MakeModelCommand;
 
 class XenolithServiceProvider extends ServiceProvider
 {
@@ -28,8 +29,16 @@ class XenolithServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('vynyl.model', function ($app) {
-            return new ModelGeneratorCommand();
+            return new MakeModelCommand();
         });
+        $this->app->singleton('vynyl.example', function ($app) {
+            return new ExampleCommand();
+        });
+
+        $this->commands([
+            'vynyl.model',
+            'vynyl.example'
+        ]);
     }
 }
 

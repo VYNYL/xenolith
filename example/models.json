@@ -1,0 +1,16 @@
+{
+  "models": {
+    "person": {
+      "properties": {
+        "id": {
+          "type": "text",
+          "comments": "Id of the user"
+        },
+        "name": {
+          "type": "text",
+          "comments": "The name of the user"
+        }
+      }
+    }
+  }
+}

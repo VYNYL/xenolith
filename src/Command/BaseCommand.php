@@ -4,7 +4,8 @@ namespace Vynyl\Xenolith\Commands;
 
 use Illuminate\Console\Command;
 
-class BaseCommand extends Command
+
+abstract class BaseCommand extends Command
 {
     /**
      * The command data.
@@ -19,6 +20,11 @@ class BaseCommand extends Command
     public $composer;
 
     /**
+     * @var Twig instance
+     */
+    public $twig;
+
+    /**
      * Create a new command instance.
      */
     public function __construct()
@@ -26,6 +32,12 @@ class BaseCommand extends Command
         parent::__construct();
 
         $this->composer = app()['composer'];
+
+        // TODO: load this as a service
+        $loader = new Twig_Loader_Filesystem(__DIR__ .'/../../templates');
+        $this->twig = new Twig_Environment($loader, array(
+            'cache' => storage_path('/twig/cache'),
+        ));
     }
 
     public function handle()
@@ -53,6 +65,8 @@ class BaseCommand extends Command
     {
         $this->performPostActions(true);
     }
+
+    abstract protected function getTemplate();
 
     /**
      * Get the console command options.
