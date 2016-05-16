@@ -3,8 +3,7 @@
 namespace Vynyl\Xenolith\Command;
 
 use Illuminate\Console\Command;
-use \Twig_Loader_Filesystem;
-use \Twig_Environment;
+use Vynyl\Xenolith\Marshaller\BaseMarshaller;
 
 abstract class BaseCommand extends Command
 {
@@ -21,24 +20,21 @@ abstract class BaseCommand extends Command
     public $composer;
 
     /**
-     * @var Twig instance
+     * @var BaseMarshaller instance
      */
-    public $twig;
+    public $marshaller;
 
     /**
      * Create a new command instance.
      */
-    public function __construct()
+    public function __construct(BaseMarshaller $marshaller)
     {
         parent::__construct();
 
         $this->composer = app()['composer'];
 
-        // TODO: load this as a service
-        $loader = new Twig_Loader_Filesystem(__DIR__ .'/../../templates');
-        $this->twig = new Twig_Environment($loader, array(
-            'cache' => storage_path('/twig/cache'),
-        ));
+        $this->marshaller = $marshaller;
+
     }
 
     public function handle()
